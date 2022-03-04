@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { FeedController } from './feed/feed.controller';
 import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
+import { FeedModule } from './feed/feed.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { UsersModule } from './users/users.module';
       autoLoadModels: true,
       synchronize: true,
     }),
-    UsersModule
+    UsersModule,
+    FeedModule
   ],
   controllers: [AppController, FeedController, UsersController],
   providers: [AppService],
