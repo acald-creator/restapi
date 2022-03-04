@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller('feed')
-export class FeedController {}
+export class FeedController {
+    @Get()
+    findAll(): string {
+        return 'This action returns all feeds';
+    }
+}
