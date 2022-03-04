@@ -1,4 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { Sequelize } from 'sequelize-typescript';
 
 @Injectable()
-export class UsersService {}
+export class UsersService {
+  constructor(private sequelize: Sequelize) {}
+}
+
