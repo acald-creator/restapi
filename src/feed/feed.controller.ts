@@ -1,9 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpStatus, Post, Req, Res } from '@nestjs/common';
+import { Response } from 'express';
 
 @Controller('feed')
 export class FeedController {
+    @Post()
+    create(@Res() res: Response) {
+        res.status(HttpStatus.CREATED).send();
+    }
+
     @Get()
-    findAll(): string {
-        return 'This action returns all feeds';
+    findAll(@Res({ passthrough: true }) res: Response) {
+        res.status(HttpStatus.OK);
+        return [];
     }
 }
