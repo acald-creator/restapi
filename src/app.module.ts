@@ -6,6 +6,7 @@ import { FeedController } from './feed/feed.controller';
 import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
 import { FeedModule } from './feed/feed.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -20,7 +21,8 @@ import { FeedModule } from './feed/feed.module';
       synchronize: true,
     }),
     UsersModule,
-    FeedModule
+    FeedModule,
+    AuthModule
   ],
   controllers: [AppController, FeedController, UsersController],
   providers: [AppService],
