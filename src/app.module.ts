@@ -2,8 +2,6 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { FeedController } from './feed/feed.controller';
-import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
 import { FeedModule } from './feed/feed.module';
 import { AuthModule } from './auth/auth.module';
@@ -24,7 +22,7 @@ import { AuthModule } from './auth/auth.module';
     FeedModule,
     AuthModule
   ],
-  controllers: [AppController, FeedController, UsersController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule { }
